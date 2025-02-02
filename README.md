@@ -42,7 +42,7 @@ This clone draws its inspiration from the original flash game "[フルーツボ�
 
 1. Clone the repository.
 ```
-git clone https://github.com/kairess/fruit-box-clone.git
+git clone https://github.com/kairess/fruit-box.git
 ```
 
 2. Run the game.

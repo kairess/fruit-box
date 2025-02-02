@@ -2,6 +2,10 @@
 
 ![Fruit Box Clone](result.png)
 
+## Play Game / 게임 플레이
+
+[Play / 플레이](https://kairess.github.io/fruit-box/)
+
 ## Overview / 게임 개요
 
 Fruit Box is a simple and addictive puzzle game where players drag a selection box across a grid of apples. Each apple displays a number from 1 to 9. The objective is to select apple combinations whose sum equals 10 within a two-minute time limit, earning 1 point per apple in a valid combination. Originally inspired by the flash game "フルーツボックス".

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>사과 게임</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <!-- 게임 영역 (그리드와 드래그 박스, splash 화면, 결과 모달 포함) -->
+      <div id="grid-container">
+        <div id="grid"></div>
+        <!-- 드래그 시 표시되는 선택 박스 -->
+        <div id="selection-box" class="hidden"></div>
+        <!-- splash 화면 (최초 게임 시작 전 표시) -->
+        <div id="splash-screen">
+          <h1>사과 게임</h1>
+          <p>재미있는 사과 게임에 오신 것을 환영합니다!</p>
+          <p>시작 버튼을 눌러 게임을 시작하세요.</p>
+        </div>
+        <!-- 결과 모달 (게임 종료 후 표시) -->
+        <div id="result-modal" class="hidden">
+          <div class="modal-content">
+            <h1>게임 종료</h1>
+            <p>최종 점수: <span id="final-score"></span></p>
+            <!-- 버튼 텍스트를 "닫기"로 변경 -->
+            <button id="close-button">닫기</button>
+          </div>
+        </div>
+      </div>
+      <!-- 사이드바: 시작 버튼, 점수 및 타이머 -->
+      <div id="sidebar">
+        <button id="start-button">게임 시작</button>
+        <div id="score-container">
+          <h2>점수: <span id="score">0</span></h2>
+        </div>
+        <div id="timer-container">
+          <h2>시간</h2>
+          <div id="timer-bar-container">
+            <div id="timer-bar"></div>
+          </div>
+          <p id="time-remaining">120초</p>
+        </div>
+      </div>
+    </div>
+    <!-- main.js 를 모듈 방식으로 불러옵니다 -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

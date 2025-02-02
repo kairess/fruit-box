@@ -1,0 +1,205 @@
+/* 기본 스타일 초기화 */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* 전체 게임 레이아웃 */
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* 그리드 컨테이너 (사과들이 놓이는 영역) */
+#grid-container {
+  position: relative;
+  width: 950px;
+  height: 555px; /* 10행의 셀, gap, 패딩을 고려한 높이 */
+  background-color: #fff;
+  border: 2px solid #ccc;
+  margin-right: 20px;
+}
+
+/* 그리드 레이아웃: 17열 × 10행 */
+#grid {
+  display: grid;
+  grid-template-columns: repeat(17, 50px);
+  grid-template-rows: repeat(10, 50px);
+  gap: 5px;
+  padding: 5px;
+}
+
+/* 사과 셀: 자연스러운 사과 느낌 (그라데이션, 그림자, 리프 효과) */
+.apple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 30% 30%, #ff4d4d, #ff1a1a);
+  border: 2px solid #d90000;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  user-select: none;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+/* 사과의 잎사귀 효과 */
+.apple::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  width: 10px;
+  height: 15px;
+  background: #4caf50;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+/* 사라진(빈) 셀 */
+.empty {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* 드래그 선택 박스 */
+#selection-box {
+  position: absolute;
+  border: 2px dashed blue;
+  background-color: rgba(0, 0, 255, 0.1);
+  pointer-events: none;
+}
+/* hidden 클래스에 !important 추가하여 확실히 숨김 처리 */
+.hidden {
+  display: none !important;
+}
+
+/* splash 스크린 (게임 시작 전 초기 디자인) */
+#splash-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffcccc, #ffe6e6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  padding: 20px;
+}
+#splash-screen h1 {
+  font-size: 48px;
+  margin: 0 0 10px;
+  color: #d90000;
+}
+#splash-screen p {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #333;
+}
+
+/* 결과 모달 (게임 종료 후 표시) */
+#result-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 오버레이 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+#result-modal .modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+#result-modal h1 {
+  margin-top: 0;
+  font-size: 36px;
+  color: #d90000;
+}
+#result-modal p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+#result-modal button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* fadeIn 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 사이드바 스타일 */
+#sidebar {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 시작 버튼 스타일 */
+#start-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* 타이머 바 스타일 - 컨테이너의 너비를 늘려 더 넓게 표시 */
+#timer-bar-container {
+  width: 280px;
+  height: 20px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  position: relative;
+  margin-bottom: 5px;
+}
+#timer-bar {
+  height: 100%;
+  background-color: #76c7c0;
+  width: 100%;
+}
+
+/* pop 애니메이션: 선택된 사과가 터지며 사라지는 효과 */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+.pop {
+  animation: pop 0.5s forwards;
+}
+
+/* 드래그 영역 내 사과에 노란 테두리 적용 */
+.selected-apple {
+  border: 2px solid yellow !important;
+}

@@ -54,4 +54,5 @@ npm run dev
 
 ## Created by / 제작자
 
-YouTube [빵형의 개발도상국](https://www.youtube.com/@bbanghyong)
+- YouTube [빵형의 개발도상국](https://www.youtube.com/@bbanghyong)
+- ChatGPT o3-mini-high [Prompt](https://chatgpt.com/share/679f5aa2-ef04-8002-b3a8-134db27e0bb6)

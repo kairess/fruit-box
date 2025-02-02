@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>사과 게임</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" crossorigin src="/assets/index-0BgNyCqD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CshUSUt8.css">
+  </head>
+  <body>
+    <div id="game-container">
+      <!-- 게임 영역 (그리드, 드래그 박스, splash 화면, 결과 모달 포함) -->
+      <div id="grid-container">
+        <div id="grid"></div>
+        <!-- 드래그 시 표시되는 선택 박스 -->
+        <div id="selection-box" class="hidden"></div>
+        <!-- splash 화면 (최초 게임 시작 전 표시) -->
+        <div id="splash-screen">
+          <h1>사과 게임</h1>
+          <p>재미있는 사과 게임에 오신 것을 환영합니다!</p>
+          <p>시작 버튼을 눌러 게임을 시작하세요.</p>
+          <p>YouTube <a href="https://www.youtube.com/@bbanghyong">빵형의 개발도상국</a></p>
+        </div>
+        <!-- 결과 모달 (게임 종료 후 표시) -->
+        <div id="result-modal" class="hidden">
+          <div class="modal-content">
+            <h1>게임 종료</h1>
+            <p>최종 점수: <span id="final-score"></span></p>
+            <p>YouTube <a href="https://www.youtube.com/@bbanghyong">빵형의 개발도상국</a></p>
+            <!-- 버튼 텍스트: "닫기" -->
+            <button id="close-button">닫기</button>
+          </div>
+        </div>
+      </div>
+      <!-- 사이드바: 시작 버튼, 자동 풀기 버튼, 점수 및 타이머 -->
+      <div id="sidebar">
+        <button id="start-button">게임 시작</button>
+        <!-- 새로 추가된 자동 풀기 버튼 -->
+        <button id="auto-solve-button" disabled>자동 풀기</button>
+        <div id="score-container">
+          <h2>점수: <span id="score">0</span></h2>
+        </div>
+        <div id="timer-container">
+          <div id="timer-bar-container">
+            <!-- 진행률 표시용 bar (애니메이션 등으로 너비가 줄어듦) -->
+            <div id="timer-bar"></div>
+            <!-- 텍스트는 bar가 줄어들어도 컨테이너 중앙에 고정됨 -->
+            <span id="time-remaining">120</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- main.js를 모듈 방식으로 불러옵니다 -->
+  </body>
+</html>
